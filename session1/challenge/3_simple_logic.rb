@@ -8,5 +8,8 @@
 # ten_twenty(6) # => 10
 
 def ten_twenty(n)
-  # your code goes here
+ return (n.even?)? 10 : 20 #even? returns true if the integer is an even number
 end
+
+puts(ten_twenty(5))
+puts(ten_twenty(6))
