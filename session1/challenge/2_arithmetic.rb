@@ -9,4 +9,9 @@
 # arithmetic2(-6, -7)  # => -3.5
 
 def arithmetic2(a, b)
+	return([a,b].min)/2.0
 end
+
+puts(arithmetic2(1, 2))    
+puts(arithmetic2(19, 10))
+puts(arithmetic2(-6, -7))
