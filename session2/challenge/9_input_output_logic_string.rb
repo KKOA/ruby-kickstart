@@ -24,7 +24,15 @@
 # USER:     BYE
 
 def deaf_grandma
-
+  said = gets.chomp.strip #strip remove any trailing space
+  while(said != 'BYE')
+    if(said != said.upcase || said == '') #upcase convert string to Uppercase
+      puts 'HUH?! SPEAK UP, SONNY!'
+    else
+      puts 'NO, NOT SINCE 1938!'
+    end
+    said = gets.chomp.strip
+  end
 end
 
 
