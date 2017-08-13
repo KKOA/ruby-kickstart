@@ -6,28 +6,16 @@
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
 
+
 def got_three?(elements)
-  prev= ''
-  count = 1
-  pos = 0
   elementsLen = elements.length
-  while pos < elementsLen
-    if(pos == 0)
-      prev = elements[pos]
-    else
-      if(count == 3)
-        break
-      elsif(prev == elements[pos])
-        count += 1
-      else
-        prev = elements[pos]
-        count = 1
-      end
-    end
-    pos += 1
+  return false if elementsLen < 3 # cannot contain 3 if length less than 3
+  elements.each_with_index do |element,pos|
+    return false if pos == (elementsLen-2) # prevents the line below from looking for a value outside the length of the array
+    return true if (element == elements[pos+1] && element == elements[pos+2])
   end
-  return (count == 3)? true :false
 end
+
 
 p got_three? [1, 2, 2, 2, 3]  # => true
 p
