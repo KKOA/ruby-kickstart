@@ -9,8 +9,8 @@
 
 def word_count(sentence)
   freq ={}
+  freq.default = 0 # set default value for the hash. Any key that does not have value assigned will be set to that value
   sentence.downcase.split(" ").each do |word|
-    freq[word] = 0 if(freq[word] == nil) # check if value has been initialize and if not set to 0
     freq[word] += 1 #increment the count if the key exists
   end
   return freq
