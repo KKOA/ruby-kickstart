@@ -5,3 +5,15 @@
 # There will be no punctuation in the strings.
 #
 # first_pos "The dog and the cat and the cow" # => {"The" => 0, "dog" => 1, "and" => 2, "the" => 3, "cat" => 4, "cow" => 7}
+def first_pos(sentence)
+  pos = Hash.new
+  words = sentence.split(" ")
+  words.each do |word|
+    unless pos[word] != nil #check key does has value and execute unless if this is not the case
+      pos[word] = words.index(word) #set the value to position to position of word
+    end
+  end
+  return pos
+end
+
+puts first_pos "The dog and the cat and the cow"
