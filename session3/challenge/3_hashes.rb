@@ -6,3 +6,12 @@
 #
 # Example:
 # word_count "The dog and the cat" # => {"the" => 2, "dog" => 1, "and" => 1, "cat" => 1}
+
+def word_count(sentence)
+  freq ={}
+  sentence.downcase.split(" ").each do |word|
+    freq[word] = 0 if(freq[word] == nil) # check if value has been initialize and if not set to 0
+    freq[word] += 1 #increment the count if the key exists
+  end
+  return freq
+end
